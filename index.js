@@ -9,8 +9,9 @@ function init() {
             type: "input",
             name: "text",
             message: "Enter text (3 characters or less)",
-            validate: (text) => 
-                text.length<=3 || "Text must be 3 characters or less"
+            validate: (text) => {
+                return text.length<=3 || "Text must be 3 characters or less";
+            }
             
         },
         {
@@ -18,9 +19,11 @@ function init() {
             type: "input",
             name: "textColor",
             message: "What color do you want this text?",
+            validate: (color) => {
+                return color.length > 0 || "Enter a color"
+            },
             filter: (answer) => {
                 if (answer.includes(" ")) {
-                    const index = answer.indexOf(" ");
                     const newString = answer.replace(" ", "");
                     return newString;
                 }
@@ -39,9 +42,11 @@ function init() {
             type: "input",
             name: "shapeColor",
             message: "What color do you want this shape?",
+            validate: (color) => {
+                return color.length > 0 || "Enter a color"
+            },
             filter: (answer) => {
                 if (answer.includes(" ")) {
-                    const index = answer.indexOf(" ");
                     const newString = answer.replace(" ", "");
                     return newString;
                 }
@@ -89,3 +94,8 @@ function init() {
 }
 
 init();
+
+
+
+// add comments
+// make demo video and add to readme
