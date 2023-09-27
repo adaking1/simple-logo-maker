@@ -77,7 +77,6 @@ function init() {
         </svg>`);
 
         console.log("Generated logo.svg");
-        console.log(data);
     })
     .catch((error) => {
         if (error.isTtyError) {
