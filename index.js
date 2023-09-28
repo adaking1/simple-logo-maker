@@ -22,7 +22,7 @@ function init() {
             message: "What color do you want this text?",
             filter: (answer) => {
                 if (answer.includes(" ")) {
-                    const newString = answer.replace(" ", "");
+                    const newString = answer.replaceAll(" ", "");
                     return newString;
                 }
                 else {
@@ -53,7 +53,7 @@ function init() {
             },
             filter: (answer) => {
                 if (answer.includes(" ")) {
-                    const newString = answer.replace(" ", "");
+                    const newString = answer.replaceAll(" ", "");
                     return newString;
                 }
                 else {
@@ -112,5 +112,4 @@ init();
 
 
 // add comments
-// update readme to include node color package
 // make demo video and add to readme
