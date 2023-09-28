@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs/promises");
 const {Circle, Square, Triangle} = require("./lib/shapes");
-const textSvg = require("./lib/render-svg");
+const textSvg = require("./lib/text-svg");
 const isColor = require("is-color");
 
 function init() {
@@ -20,19 +20,21 @@ function init() {
             type: "input",
             name: "textColor",
             message: "What color do you want this text?",
-            validate: (color) => {
-                return color.length > 0 || "Enter a color"
-            },
-            validate: (color) => {
-                return isColor(color) || "Please enter a valid color"
-            },
             filter: (answer) => {
                 if (answer.includes(" ")) {
                     const newString = answer.replace(" ", "");
                     return newString;
                 }
                 else {
-                    return answer;
+                    return answer.toLowerCase();
+                }
+            },
+            validate: (color) => {
+                if (color.length > 0) {
+                    return isColor(color) || "Please enter a valid color"
+                }
+                else{
+                    return color.length > 0 || "Enter a color"
                 }
             }
         },
@@ -49,16 +51,21 @@ function init() {
             validate: (color) => {
                 return color.length > 0 || "Enter a color"
             },
-            validate: (color) => {
-                return isColor(color) || "Please enter a valid color"
-            },
             filter: (answer) => {
                 if (answer.includes(" ")) {
                     const newString = answer.replace(" ", "");
                     return newString;
                 }
                 else {
-                    return answer;
+                    return answer.toLowerCase();
+                }
+            },
+            validate: (color) => {
+                if (color.length > 0) {
+                    return isColor(color) || "Please enter a valid color"
+                }
+                else{
+                    return color.length > 0 || "Enter a color"
                 }
             }
         }
@@ -105,4 +112,5 @@ init();
 
 
 // add comments
+// update readme to include node color package
 // make demo video and add to readme
