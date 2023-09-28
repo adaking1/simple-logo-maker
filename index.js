@@ -2,6 +2,7 @@ const inquirer = require("inquirer");
 const fs = require("fs/promises");
 const {Circle, Square, Triangle} = require("./lib/shapes");
 const textSvg = require("./lib/render-svg");
+const isColor = require("is-color");
 
 function init() {
     inquirer.prompt([
@@ -21,6 +22,9 @@ function init() {
             message: "What color do you want this text?",
             validate: (color) => {
                 return color.length > 0 || "Enter a color"
+            },
+            validate: (color) => {
+                return isColor(color) || "Please enter a valid color"
             },
             filter: (answer) => {
                 if (answer.includes(" ")) {
@@ -44,6 +48,9 @@ function init() {
             message: "What color do you want this shape?",
             validate: (color) => {
                 return color.length > 0 || "Enter a color"
+            },
+            validate: (color) => {
+                return isColor(color) || "Please enter a valid color"
             },
             filter: (answer) => {
                 if (answer.includes(" ")) {
