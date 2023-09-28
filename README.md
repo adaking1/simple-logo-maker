@@ -17,6 +17,7 @@ This application is a simple logo maker. It can be very useful for freelance web
 Install this application by first installing node.js to your machine. Then, install npm, inquirer version 8.2.4, is-Color and jest from npm.
 
 ## Usage
+[Usage Demo](https://drive.google.com/file/d/1Ye8waATmOEVz-Uu8xNjdYpTMuF0av3cH/view)  
 Start this application by first making sure that your terminal is located in the folder that holds the index.js file for this project. Type "node index.js" into the terminal to run the app. You will then be asked prompts through inquirer. The first prompt asks you to enter the text for your logo using up to three characters. The next prompt asks what color you would like the text. Next, you will be asked to select a shape from a list of three options (circle, square, triangle). After you select one, then the last prompt will ask you what color you want that shape. After all the prompts are answered, a logo.svg file is created and added to the current folder, and in the terminal "Generated logo.svg" is console logged.
 
 ## Contributing
