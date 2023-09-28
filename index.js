@@ -23,7 +23,7 @@ function init() {
             filter: (answer) => {
                 if (answer.includes(" ")) {
                     const newString = answer.replaceAll(" ", "");
-                    return newString;
+                    return newString.toLowerCase();
                 }
                 else {
                     return answer.toLowerCase();
@@ -54,7 +54,7 @@ function init() {
             filter: (answer) => {
                 if (answer.includes(" ")) {
                     const newString = answer.replaceAll(" ", "");
-                    return newString;
+                    return newString.toLowerCase();
                 }
                 else {
                     return answer.toLowerCase();
